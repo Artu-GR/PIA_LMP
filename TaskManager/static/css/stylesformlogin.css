@@ -1,0 +1,150 @@
+/* p{
+    margin:15px;
+    display: flex;
+    width: 90%;
+}
+.title-container{
+    display: block;
+    width: 100%;
+    border-radius: 2%;
+    background-color: #6fd427;
+    text-align: center;
+    color: white;
+}
+p:not(:has(textarea)){
+    flex-direction: row;
+}
+p:has(textarea){
+    flex-direction: column;
+}
+form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+label{
+    flex: 1;
+    text-align: left ;
+}
+input{
+    flex: 1;
+    text-align: left ;
+}
+textarea{
+    flex:1;
+    resize: none;
+}
+a{
+    margin: 30px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #D6F2C2;
+    font-family: 'Roboto Flex';
+}
+button{
+    margin: 30px;
+    display: block;
+    width: 60%;
+    background-color: white;
+    border-radius: 7px;
+    border-color: black;
+    border-width: 1px;
+    height: 30px;
+}
+button:hover {
+    background-color: #D6F2C2;   /* Cambia el color de fondo al pasar el ratón 
+}
+.container{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 550px;
+    background-color: rgb(163, 78, 78);
+    border-radius: 2%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+span{
+    display: inline-block;
+} */
+
+p{
+    margin:15px;
+    display: flex;
+    width: 90%;
+}
+.title-container{
+    display: block;
+    width: 100%;
+    border-radius: 2%;
+    background-color: #6fd427;
+    text-align: center;
+    color: white;
+}
+p:not(:has(textarea)){
+    flex-direction: row;
+}
+p:has(textarea){
+    flex-direction: column;
+}
+form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+label{
+    flex: 1;
+    text-align: left ;
+}
+input{
+    flex: 1;
+    text-align: left ;
+}
+textarea{
+    flex:1;
+    resize: none;
+}
+a{
+    margin: 30px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #D6F2C2;
+    font-family: 'Roboto Flex';
+}
+button{
+    margin: 30px;
+    display: block;
+    width: 60%;
+    background-color: white;
+    border-radius: 7px;
+    border-color: black;
+    border-width: 1px;
+    height: 30px;
+}
+button:hover {
+    background-color: #D6F2C2;   /* Cambia el color de fondo al pasar el ratón */
+}
+.container{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 550px;
+    background-color: white;
+    border-radius: 2%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+span{
+    font-size: 11px;
+    flex:1.5;
+}

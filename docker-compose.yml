@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    container_name: Database
+    environment:
+      MYSQL_DATABASE: PIA_LMP
+      #MYSQL_USER: django_user
+      #MYSQL_PASSWORD: django_password
+      MYSQL_ROOT_PASSWORD: ijklmnop582#
+    volumes:
+       - mysql-data:/var/lib/mysql
+    ports:
+      - '3307:3306'
+    networks:
+      - app-network
+
+  web:
+    build: .
+    container_name: TaskManager
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - ./static:/app/static
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+    environment:
+      DB_HOST: Database
+      DB_PORT: 3307
+      DB_NAME: PIA_LMP
+      DB_USER: root
+      DB_PASSWORD: ijklmnop582#
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
