@@ -85,6 +85,13 @@ WSGI_APPLICATION = 'TaskManager.wsgi.application'
     }
 }'''
 
+
+
+"""
+
+Para jenkins
+
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -98,17 +105,22 @@ DATABASES = {
 
 ALLOWED_HOSTS = ['*']
 
-'''DATABASES = {
+
+"""
+Para modificar desde windows (Daniel)
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'PIA_LMP',
-        'USER': 'root',
+        'USER': 'PIA_LMP',
         'PASSWORD': 'ijklmnop582#',
         'HOST': 'localhost',
-        'PORT': '3307',
+        'PORT': '3306',
     }
 }
-'''
+"""
+
+
 '''
 DATABASES = {
     'default': {
