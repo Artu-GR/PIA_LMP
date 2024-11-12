@@ -9,8 +9,8 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /PIA_LMP
 
 # Install system dependencies required for mysqlclient
-RUN dnf update && \
-    dnf install -y --no-install-recommends \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
     gcc \
     default-libmysqlclient-dev \
     build-essential \
