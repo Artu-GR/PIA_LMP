@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'artugr/TaskManager'
+        DOCKER_IMAGE = 'artugr/taskmanager'
     }
     stages {
         stage('Clone repository') {
