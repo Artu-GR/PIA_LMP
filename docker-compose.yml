@@ -20,11 +20,11 @@ services:
   web:
     build: .
     container_name: TaskManager
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8001
     volumes:
       - .:/app
     ports:
-      - '8000:8000'
+      - '8001:8000'
     depends_on:
       - db
     environment:

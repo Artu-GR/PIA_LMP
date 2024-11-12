@@ -9,8 +9,8 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /PIA_LMP
 
 # Install system dependencies required for mysqlclient
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+RUN dnf update && \
+    dnf install -y --no-install-recommends \
     gcc \
     default-libmysqlclient-dev \
     build-essential \
@@ -29,4 +29,4 @@ COPY . .
 EXPOSE 8000
 
 # Run the application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8001"]
