@@ -8,6 +8,7 @@ from .models import Task
 @login_required
 def index(request):
     tasks = Task.objects.filter(id_user=request.user)
+    for _ in messages.get_messages(request): pass
     return render(request, 'index.html', {'tasks': tasks})
 
 @login_required
@@ -22,6 +23,7 @@ def add_task(request):
             return redirect('index')
     else:
         form = TaskRegistrationForm()
+    for _ in messages.get_messages(request): pass
     return render(request, 'addTask.html', {'form': form})
 
 @login_required
@@ -34,6 +36,7 @@ def edit_task(request, task_id):
             return redirect('index')  # Redirect to home after editing
     else:
         form = TaskRegistrationForm(instance=task)
+    for _ in messages.get_messages(request): pass
     return render(request, 'edit_task.html', {'form': form, 'task': task})
 
 @login_required
@@ -43,4 +46,5 @@ def delete_task(request, task_id):
         task.delete()
         messages.success(request, "Task deleted successfully!")
         return redirect('index')
+    for _ in messages.get_messages(request): pass
     return redirect(reverse('index'))

@@ -11,7 +11,7 @@ def home(request):
     return redirect('register')
 
 def login_view(request):
-    
+    for _ in messages.get_messages(request): pass
     if request.method == 'POST':
         
         form = AuthenticationForm(request, data=request.POST)
@@ -62,7 +62,7 @@ def register(request):
             group, created = Group.objects.get_or_create(name='RegUsers')
             user.groups.add(group)  # Add the user to the RegUsers group
             
-            messages.success(request, 'User registered successfully and added to RegUsers group!')
+
             return redirect('login')
     else:
         form = UserRegistrationForm()

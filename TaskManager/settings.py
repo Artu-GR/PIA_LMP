@@ -99,7 +99,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'ijklmnop582#',
         'HOST': 'Database',
-        'PORT': '3307',
+        'PORT': '3306',
     }
 }
 
