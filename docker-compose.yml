@@ -9,7 +9,7 @@ services:
       MYSQL_DATABASE: PIA_LMP
       #MYSQL_USER: django_user
       #MYSQL_PASSWORD: django_password
-      MYSQL_ROOT_PASSWORD: ijklmnop582#
+      MYSQL_ROOT_PASSWORD: ijklmnop582# #root #ijklmnop582#
     volumes:
        - mysql-data:/var/lib/mysql
     ports:
@@ -32,7 +32,7 @@ services:
       DB_PORT: 3307
       DB_NAME: PIA_LMP
       DB_USER: root
-      DB_PASSWORD: ijklmnop582#
+      DB_PASSWORD: ijklmnop582# #root #ijklmnop582#
     networks:
       - app-network
 
