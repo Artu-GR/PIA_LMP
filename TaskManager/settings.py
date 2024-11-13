@@ -99,9 +99,10 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'ijklmnop582#',
         'HOST': 'Database',
-        'PORT': '3306',
+        'PORT': '3307',
     }
 }
+
 
 ALLOWED_HOSTS = ['*']
 

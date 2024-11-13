@@ -11,7 +11,9 @@ def home(request):
     return redirect('register')
 
 def login_view(request):
+    
     if request.method == 'POST':
+        
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
@@ -25,15 +27,25 @@ def login_view(request):
 
                 if account_type == 'staff':
                     if not user.is_staff:
-                        return HttpResponse("Acceso denegado : no cuenta con permisos para iniciar sesion como admin", status=403)
+                        for _ in messages.get_messages(request): pass
+                        messages.error(request, "Access denied: your account does not have admin priviligies")
+                        return redirect("login")
                     else:
                         return redirect(reverse('admin:index'))
                 elif account_type == 'non_staff':
                     if user.is_staff:
-                        return HttpResponse("Debe iniciar sesion como admin", status=403)
+                        for _ in messages.get_messages(request): pass
+                        messages.error(request, "You have to log in as an admin")
+                        return redirect("login")
                     return redirect('index')               
             else:
-                return HttpResponse("Usuario no encontrado", status=403)
+                
+                for _ in messages.get_messages(request): pass
+                messages.error(request, "User not found")
+                return redirect("login")
+        for _ in messages.get_messages(request): pass
+        messages.error(request, "Error: Not valid input values")
+        return redirect("login")
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
