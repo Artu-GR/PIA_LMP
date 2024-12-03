@@ -1,2 +1,4 @@
 # PIA_LMP
-Jenkins | Docker | Django | Python CRUD
+Python CRUD for managing tasks. MySQL Database.
+Django framework
+Automated deploy with each commit using Docker and Jenkins.
